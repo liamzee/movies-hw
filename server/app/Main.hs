@@ -12,6 +12,8 @@ main = initialize >> run 7143 moviesApp
 
 
 initialize :: IO ()
-initialize = doesFileExist "db.json" >>= \case
+initialize = doesFileExist "db.json" >>=
+    
+    \case
     True -> pure ()
     False -> writeFile "db.json" ""
